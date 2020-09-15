@@ -1,0 +1,35 @@
+  <div>
+    <div class="card-body">
+      <h3 class="mb-0">Contacts</h3>
+      <div  *ngIf="loading">
+        <mat-progress-bar mode="query"></mat-progress-bar>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </div>
+      <div *ngIf="!loading" class="form-group">
+        <input class="form-control mt-2" type="text"
+               [(ngModel)]="search" placeholder="Search">
+      </div>
+
+      <div *ngIf="!loading" class="list-group">
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+           *ngFor="let contact of (contacts | searchContact: search)">
+          <div class="media">
+            <div class="media-body align-self-center">
+              <div>
+                <h5 class="m-0">{{ contact.name }}</h5>
+              </div>
+              <div>{{ contact.mobile }}</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div  *ngIf="!loading" style="padding:5px 5px 15px 0px; text-align: right;">
+      <button mat-mini-fab color="primary" matTooltip="Add Contact" (click)="addContact()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </div>
+ 
+
+

@@ -1,0 +1,8 @@
+<div class="position-relative container">
+  <div class="row justify-content-center">
+    <div class="card mt-sm-3 col-md-8">
+      <app-phonebook-view (isAvailable)="onChange($event)" *ngIf="!isCreate"></app-phonebook-view>
+      <app-phonebook-create (isAvailable)="onChange($event)" *ngIf="isCreate"></app-phonebook-create>
+    </div>
+  </div>
+</div>

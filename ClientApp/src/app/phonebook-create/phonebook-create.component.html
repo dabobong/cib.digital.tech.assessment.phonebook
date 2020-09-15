@@ -1,0 +1,17 @@
+<div>
+  <div class="card-body">
+    <h3 class="mb-0">New Contact</h3>
+    <div class="form-group">
+      <input class="form-control mt-2" type="text"
+             [(ngModel)]="Name" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <input class="form-control mt-2" type="text"
+             [(ngModel)]="Phonenumber" placeholder="Phonenumber">
+    </div>
+    <div style="text-align: right;">
+      <button mat-raised-button style="margin: 5px;" (click)="cancelContact()">Cancel</button>
+      <button mat-raised-button color="primary" (click)="saveContact(Name,Phonenumber)">Save</button>
+    </div>
+  </div>
+</div>
